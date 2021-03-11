@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-    <title>Login</title>
+    <title>Register</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
@@ -24,7 +24,6 @@
         <!-- Navbar links -->
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav mr-auto">
-                
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -36,19 +35,35 @@
     </nav>
 
     <div class="container">
-        
+
 
         <form action="" method="post" class="mt-5">
-            <h4>Login</h4>
-            <br/>
+            <h4>Register</h4>
+            <br />
+            <div class="form-group">
+                <label for="exampleInputUserName">Username</label>
+                <input type="text" name="name" class="form-control" id="exampleInputUserName" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword">Password</label>
+                <input type="password" name="password" class="form-control" id="exampleInputPassword" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputConfirmPassword">Confirm Password</label>
+                <input type="password" name="confirmPassword" class="form-control" id="exampleInputConfirmPassword" placeholder="Confirm Password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPhone">Phone number</label>
+                <input type="text" name="phone" class="form-control" id="exampleInputPhone" placeholder="Phone Number">
+            </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
                 <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <label for="exampleInputAddress">Address</label>
+                <input type="text" name="address" class="form-control" id="exampleInputAddress" placeholder="Address">
             </div>
             <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -56,7 +71,8 @@
             </div>
             <button type="submit" class="btn btn-primary">Login</button>
         </form>
-        <div class="mt-4">Don't have an account, <a href="/Register/Index">Create one</a></div>
+        <div class="mt-4 my-4">Have an account? Login <a href="/Login/Index">here</a></div>
+        <div style="height: 50px"></div>
 
 
 
@@ -65,9 +81,8 @@
 
 
 
-        
 
-        <footer class="fixed-bottom bg-dark text-white text-center">
+        <footer class="fixed-bottom bg-dark text-white text-center mt-4">
             <div class="container my-2">
                 <span class="text-muted">&copy; @DateTime.Now.Year - webBuy</span>
             </div>
