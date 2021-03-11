@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace webBuy
+namespace webBuy.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class AdminDiscount
+    public partial class Comission
     {
-        public int adminDiscountId { get; set; }
-        public int userId { get; set; }
-        public string promoCode { get; set; }
-        public Nullable<int> percentage { get; set; }
+        public int comissionId { get; set; }
+        public string date { get; set; }
+        public Nullable<double> amount { get; set; }
+        public int shopId { get; set; }
     }
 }

@@ -7,18 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace webBuy
+namespace webBuy.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Shop
+    public partial class Review
     {
-        public int shopId { get; set; }
-        public string name { get; set; }
-        public string email { get; set; }
-        public Nullable<int> shopStatus { get; set; }
-        public Nullable<double> balance { get; set; }
-        public Nullable<int> setComission { get; set; }
+        public int reviewId { get; set; }
+        public int productId { get; set; }
+        public string review1 { get; set; }
+        public Nullable<int> rating { get; set; }
+        public int userId { get; set; }
     }
 }

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace webBuy
+namespace webBuy.Models
 {
     using System;
     using System.Data.Entity;

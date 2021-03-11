@@ -7,17 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace webBuy
+namespace webBuy.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Invoice
+    public partial class Category
     {
-        public int invoiceId { get; set; }
-        public int orderId { get; set; }
-        public int productId { get; set; }
-        public Nullable<int> quantity { get; set; }
-        public Nullable<double> unitPrice { get; set; }
+        public int categoryId { get; set; }
+        public string name { get; set; }
     }
 }
