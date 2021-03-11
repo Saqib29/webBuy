@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using webBuy.Repositories;
 
 namespace webBuy.Controllers
 {
     public class LoginController : Controller
     {
+        UserRepository userRepository = new UserRepository();
         // GET: Login
         public ActionResult Index()
         {
