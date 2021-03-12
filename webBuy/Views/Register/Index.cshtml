@@ -44,33 +44,50 @@
             <div class="form-group">
                 <label for="exampleInputUserName">Username</label>
                 <input type="text" name="name" class="form-control" id="exampleInputUserName" placeholder="Enter username">
+                @Html.ValidationMessageFor(m => m.name, "", new { @class = "text-danger" })
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword">Password</label>
                 <input type="password" name="password" class="form-control" id="exampleInputPassword" placeholder="Password">
+                @Html.ValidationMessageFor(m => m.password, "", new { @class = "text-danger" })
+
             </div>
             <div class="form-group">
                 <label for="exampleInputConfirmPassword">Confirm Password</label>
                 <input type="password" name="confirmPassword" class="form-control" id="exampleInputConfirmPassword" placeholder="Confirm Password">
+                @Html.ValidationMessageFor(m => m.confirmPassword, "", new { @class = "text-danger" })
             </div>
             <div class="form-group">
                 <label for="exampleInputPhone">Phone number</label>
                 <input type="text" name="phone" class="form-control" id="exampleInputPhone" placeholder="Phone Number">
+                @Html.ValidationMessageFor(m => m.phone, "", new { @class = "text-danger" })
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
                 <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+                @Html.ValidationMessageFor(m => m.email, "", new { @class = "text-danger" })
             </div>
             <div class="form-group">
                 <label for="exampleInputAddress">Address</label>
                 <input type="text" name="address" class="form-control" id="exampleInputAddress" placeholder="Address">
             </div>
+            <p>Register as </p>
             <div class="form-group form-check">
+
+                <input type="checkbox" name="role" value="customer" class="form-check-input" id="examplerole">
+                <label class="form-check-label" for="examplerole">Customer</label>
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                <input type="checkbox" name="role" value="seller" class="form-check-input" id="examplerole">
+                <label class="form-check-label" for="examplerole">Seller</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                @Html.ValidationMessageFor(m => m.role, "", new { @class = "text-danger" })
+            </div>
+            @*<div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
+            </div>*@
             <button type="submit" class="btn btn-primary">Register</button>
         </form>
         <div class="mt-4 my-4">Have an account? Login <a href="/Login/Index">here</a></div>
