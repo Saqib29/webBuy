@@ -125,7 +125,6 @@
     <Compile Include="Models\Category.cs">
       <DependentUpon>webBuy.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Validation\ChangePassword.cs" />
     <Compile Include="Models\Comission.cs">
       <DependentUpon>webBuy.tt</DependentUpon>
     </Compile>
@@ -156,6 +155,7 @@
     <Compile Include="Models\User.cs">
       <DependentUpon>webBuy.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Validation\ChangePassword.cs" />
     <Compile Include="Models\Validation\User2.cs" />
     <Compile Include="Models\Validation\UserMetaData.cs" />
     <Compile Include="Models\webBuy.Context.cs">
