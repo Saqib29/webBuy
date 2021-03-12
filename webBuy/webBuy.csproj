@@ -132,8 +132,6 @@
     <Compile Include="Models\Invoice.cs">
       <DependentUpon>webBuy.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\MetaData\User.cs" />
-    <Compile Include="Models\MetaData\UserMetaData.cs" />
     <Compile Include="Models\Order.cs">
       <DependentUpon>webBuy.tt</DependentUpon>
     </Compile>
@@ -155,6 +153,8 @@
     <Compile Include="Models\User.cs">
       <DependentUpon>webBuy.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserMetaData.cs" />
+    <Compile Include="Models\UserPartial.cs" />
     <Compile Include="Models\webBuy.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

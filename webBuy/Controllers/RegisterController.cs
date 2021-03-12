@@ -19,10 +19,10 @@ namespace webBuy.Controllers
         {
             if (ModelState.IsValid)
             {
-                return Content("-> worked validation "+user);
+                return Content("-> worked validation "+user.email);
 
             }
-            return Content("-> validation doesn't work");
+            return View();
         }
     }
 }

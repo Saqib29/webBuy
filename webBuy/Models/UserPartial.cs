@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace webBuy.Models.MetaData
+namespace webBuy.Models
 {
     [MetadataType(typeof(UserMetaData))]
     public partial class User
