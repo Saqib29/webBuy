@@ -111,15 +111,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-<<<<<<< HEAD
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\RegisterController.cs" />
-=======
     <Compile Include="Controllers\Admin\AdminController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\LogoutController.cs" />
->>>>>>> muntasir
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -160,13 +154,8 @@
     <Compile Include="Models\User.cs">
       <DependentUpon>webBuy.tt</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="Models\UserMetaData.cs" />
-    <Compile Include="Models\UserPartial.cs" />
-=======
     <Compile Include="Models\Validation\User2.cs" />
     <Compile Include="Models\Validation\UserMetaData.cs" />
->>>>>>> muntasir
     <Compile Include="Models\webBuy.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -203,14 +192,8 @@
     <Content Include="Views\Shared\_adminLayout.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Shared\_sellerLayout.cshtml" />
-<<<<<<< HEAD
-    <Content Include="Views\Register\Index.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\_homeLayout.cshtml" />
-=======
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\UpdateUserProfile.cshtml" />
->>>>>>> muntasir
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
