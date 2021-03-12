@@ -8,30 +8,21 @@ namespace webBuy.Models
 {
     public class UserMetaData
     {
-        [Required]
         public int userId { get; set; }
-
-        [DataType(DataType.EmailAddress)]
-        [Required(ErrorMessage = "Please enter Email ID")]
-        [RegularExpression(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$", ErrorMessage = "Email is not valid.")]
+        [Required(ErrorMessage = "The Email Address is required"), EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string email { get; set; }
-        
-        [Required]
+        [Required(ErrorMessage = "Username must required"), StringLength(50, MinimumLength = 3)]
         public string name { get; set; }
-        
-        [Required]
+        [Required(ErrorMessage = "Password must required")]
+        [StringLength(50, ErrorMessage = "Must be at least 6 characters", MinimumLength = 6)]
+        [DataType(DataType.Password)]
         public string password { get; set; }
-        
-        [Required]
+
+
         public string phone { get; set; }
-        
-        [Required]
         public string address { get; set; }
-        
-        [Required]
+        [Required(ErrorMessage = "Must select type")]
         public string role { get; set; }
-        
-        [Required]
         public Nullable<int> userStatus { get; set; }
     }
 }
