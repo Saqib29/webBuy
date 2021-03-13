@@ -36,6 +36,7 @@ namespace webBuy.Repositories
         {
             context.Entry(entity).State = EntityState.Modified;
             context.SaveChanges();
+            //var t = entity;
         }
     }
 }

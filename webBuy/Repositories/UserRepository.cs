@@ -21,5 +21,10 @@ namespace webBuy.Repositories
             }
             return false;
         }
+
+        public User getUser(string email)
+        {
+            return this.context.Users.Where(e => e.email == email).FirstOrDefault();
+        }
     }
 }
