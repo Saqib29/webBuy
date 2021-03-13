@@ -19,8 +19,8 @@ namespace webBuy.Controllers
         [HttpPost]
         public ActionResult Index(User user)
         {
-            //var loginUser = userRepository.VerifyLogin(user.email, user.password);
-            var loginUser = userRepository.VerifyLogin("saqib@email.com", "123456");
+            var loginUser = userRepository.VerifyLogin(user.email, user.password);
+            //var loginUser = userRepository.VerifyLogin("saqib@email.com", "12345#");
             if (loginUser!= null) 
             {
                 if (loginUser.userStatus==1)

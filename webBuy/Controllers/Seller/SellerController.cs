@@ -18,10 +18,30 @@ namespace webBuy.Controllers.Seller
 
             return View();
         }
-
+        [HttpGet]
         public ActionResult profileUpdate()
         {
+            ViewBag.user = Session["userProfile"] as User;
             return View();
+        }
+        [HttpPost]
+        public ActionResult profileUpdate(User user)
+        {
+            if (ModelState.IsValid)
+            {
+                User profile = userRepository.Get((Session["userProfile"] as User).userId);
+                profile.name = user.name;
+                profile.phone = user.phone;
+                profile.address = user.address;
+                profile.password = user.password;
+                profile.confirmPassword = user.confirmPassword;
+                Session["userProfile"] = profile;
+                TempData["update-msg"] = "Profile Updated";
+                userRepository.Update(profile);
+                return RedirectToAction("Index");
+            }
+            ViewBag.user = Session["userProfile"] as User;
+            return View("profileUpdate");
         }
         [HttpPost]
         public ActionResult ChangePassword(ChangePassword changePassword)
