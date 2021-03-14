@@ -1,0 +1,37 @@
+﻿@model webBuy.Models.Shop
+
+@{
+    ViewBag.Title = "Create New Shop";
+    Layout = "~/Views/Shared/_sellerLayout.cshtml";
+}
+
+
+<form action="" method="post" class="mt-5">
+    <h4>Create New Shop</h4>
+    @if (TempData["msg"] != null)
+    {
+        <div class="alert alert-danger small" role="alert">
+            @TempData["msg"]
+        </div>
+    }
+    else
+    {
+        <br />
+    }
+    <div class="form-group">
+        <label for="exampleInputShopName">Shop Name</label>
+        <input type="text" name="name" class="form-control" id="exampleInputShopName" placeholder="Shop Name">
+        @Html.ValidationMessageFor(m => m.name, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail">Email address</label>
+        <input type="email" name="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" value="@ViewBag.email" readonly>
+        @Html.ValidationMessageFor(m => m.email, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group form-check small">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Create Shop</button>
+</form>

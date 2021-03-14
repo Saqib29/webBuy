@@ -17,6 +17,8 @@ namespace webBuy.Controllers.Seller
             Session["shopProfile"] = shopRepository.GetShop((Session["userProfile"] as User).email.ToString());
 
             return View();
+            //var t = shopRepository.GetShop((Session["userProfile"] as User).email.ToString());
+            //return Content("");
         }
         [HttpGet]
         public ActionResult profileUpdate()

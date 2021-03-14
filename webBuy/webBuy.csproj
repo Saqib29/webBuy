@@ -118,6 +118,7 @@
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\Seller\ProductController.cs" />
     <Compile Include="Controllers\Seller\SellerController.cs" />
+    <Compile Include="Controllers\Seller\ShopController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -158,6 +159,8 @@
       <DependentUpon>webBuy.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Validation\ChangePassword.cs" />
+    <Compile Include="Models\Validation\Shop.cs" />
+    <Compile Include="Models\Validation\ShopMetaData.cs" />
     <Compile Include="Models\Validation\User2.cs" />
     <Compile Include="Models\Validation\UserMetaData.cs" />
     <Compile Include="Models\webBuy.Context.cs">
@@ -205,6 +208,7 @@
     <Content Include="Views\Seller\Index.cshtml" />
     <Content Include="Views\Seller\profileUpdate.cshtml" />
     <Content Include="Views\Product\Create.cshtml" />
+    <Content Include="Views\Shop\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
