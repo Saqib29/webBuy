@@ -1,0 +1,42 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_sellerLayout.cshtml";
+}
+
+@if (TempData["update-msg"] != null)
+{
+    <div class="alert alert-success small" role="alert">
+        @TempData["update-msg"]
+    </div>
+}
+else if (TempData["msg"] != null)
+{
+    <div class="alert alert-danger small" role="alert">
+        @TempData["msg"]
+    </div>
+}
+else
+{
+    <br />
+}
+
+<h1>Categories</h1>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Category Id</th>
+            <th scope="col">Category Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.categories)
+        {
+            <tr>
+                <th scope="row">@item.categoryId</th>
+                <td>@item.name</td>
+            </tr>
+        }
+
+    </tbody>
+</table>

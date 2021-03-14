@@ -6,7 +6,7 @@ using webBuy.Models;
 
 namespace webBuy.Repositories
 {
-    public class CategoryRepository : Repository<Category>
+    public class CategoryRepository:Repository<Category>
     {
     }
 }
