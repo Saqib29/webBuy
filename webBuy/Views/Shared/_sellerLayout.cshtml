@@ -17,12 +17,13 @@
     <nav class="navbar fixed-top navbar-expand-md bg-dark navbar-dark">
         <!-- Brand -->
         <a class="navbar-brand" href="/Seller">webBuy</a>
+        &nbsp; &nbsp;
 
         <!-- Drpdown button -->
         <div class="btn-group">
-            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-white small dropdown-toggle" style="cursor:pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Products
-            </button>
+            </span>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="/Product/create">Create New Product</a>
                 <a class="dropdown-item" href="/Product/Index">See Products</a>
@@ -31,15 +32,26 @@
         </div>
         &nbsp; &nbsp;
         <div class="btn-group">
-            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-white small dropdown-toggle" style="cursor:pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Shop
-            </button>
+            </span>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="/Shop/Create">Create A Shop</a>
                 <a class="dropdown-item" href="/Shop/UpdateShop">Update Shop</a>
             </div>
         </div>
 
+        &nbsp; &nbsp;
+        <div class="btn-group">
+
+            <span class="text-white small dropdown-toggle" style="cursor:pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Categories
+            </span>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="/Category/Create">Create A Category</a>
+                <a class="dropdown-item" href="/Category/Index">See Categories</a>
+            </div>
+        </div>
 
         <!-- Navbar links -->
         <ul class="navbar-nav mr-auto">
