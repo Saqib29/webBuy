@@ -209,6 +209,7 @@
     <Content Include="Views\Seller\profileUpdate.cshtml" />
     <Content Include="Views\Product\Create.cshtml" />
     <Content Include="Views\Shop\Create.cshtml" />
+    <Content Include="Views\Shop\UpdateShop.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -34,5 +34,33 @@ namespace webBuy.Controllers.Seller
             return View();
         }
 
+        [HttpGet]
+        public ActionResult UpdateShop()
+        {
+            if(Session["shopProfile"] == null)
+            {
+                TempData["msg"] = "No shop to update! First create Shop";
+                return RedirectToAction("Index", "Seller");
+            }
+            ViewBag.shop = Session["shopProfile"];
+            return View();
+        }
+        [HttpPost]
+        public ActionResult UpdateShop(Shop shop)
+        {
+            if (shop.shopStatus == null)
+            {
+                TempData["msg"] = "Your shop must need to be activated by an Admin";
+                return RedirectToAction("Index", "Seller");
+            }
+            if (ModelState.IsValid)
+            {
+                TempData["update-msg"] = "Updated Shop";
+                shopRepository.Update(shop);
+                return RedirectToAction("Index", "Seller");
+            }
+            ViewBag.shop = Session["shopProfile"];
+            return View();
+        }
     }
 }
