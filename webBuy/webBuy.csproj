@@ -159,6 +159,8 @@
       <DependentUpon>webBuy.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Validation\ChangePassword.cs" />
+    <Compile Include="Models\Validation\Product.cs" />
+    <Compile Include="Models\Validation\ProductMetaData.cs" />
     <Compile Include="Models\Validation\Shop.cs" />
     <Compile Include="Models\Validation\ShopMetaData.cs" />
     <Compile Include="Models\Validation\User2.cs" />
@@ -184,6 +186,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CategoryRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\ProductRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Repositories\ShopRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
@@ -221,6 +224,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
     <Folder Include="src\" />
   </ItemGroup>
   <ItemGroup>

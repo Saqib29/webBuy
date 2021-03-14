@@ -1,6 +1,64 @@
-﻿
+﻿@model webBuy.Models.Product
 @{
+    ViewBag.Title = "Create Product";
     Layout = "~/Views/Shared/_sellerLayout.cshtml";
 }
 
-<h1>Create Product</h1>
+
+<div class="container">
+    @if (TempData["msg"] != null)
+    {
+        <div class=" container alert-danger small p-2" role="alert">
+            @TempData["msg"]
+        </div>
+    }
+
+    <form method="post" class="mt-5" enctype = "multipart/form-data">
+        <h4>Create new Product</h4>
+        <br />
+        <div class="form-group">
+            <label for="exampleInputProductName">Product Name</label>
+            <input type="text" name="name" class="form-control" id="exampleInputProductName" placeholder="Enter Product Name">
+            @Html.ValidationMessageFor(m => m.name, "", new { @class = "text-danger" })
+        </div>
+        <input type="hidden" name="shopId" value="@ViewBag.shopId" />
+        <div class="form-group">
+            <label for="exampleInputUnitPrice">Unit Price</label>
+            <input type="text" name="unitPrice" class="form-control" id="exampleInputUnitPrice" placeholder="Enter Product Price">
+            @Html.ValidationMessageFor(m => m.unitPrice, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            <label for="exampleInputQuantity">Product Quantity</label>
+            <input type="text" name="quantity" class="form-control" id="exampleInputQuantity" placeholder="Enter Product Qunatity">
+            @Html.ValidationMessageFor(m => m.quantity, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            <label for="exampleInputDate">Date</label>
+            <input type="text" name="date" class="form-control" id="exampleInputDate" value="@(DateTime.Today.ToString("M/d/yyyy"))" readonly>
+            @Html.ValidationMessageFor(m => m.date, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            <label for="formFile" class="form-label">Choose Image</label>
+            <input class="form-control" name="productPicture" accept="image/*" type="file" id="formFile">
+            
+            @Html.ValidationMessageFor(m => m.productPicture, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            <label for="exampleInputcategory">Category</label>
+            <select class="form-control" name="categoryId" id="exampleInputcategory">
+                @foreach (var item in ViewBag.categories)
+                {
+                    <option value="@item.categoryId">@item.name</option>
+                }
+            </select>
+            @Html.ValidationMessageFor(m => m.categoryId, "", new { @class = "text-danger" })
+        </div>
+
+        <a href="/Seller/Index" class="btn btn-primary">Cancel</a>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+    @*<div class="mt-4 my-4">Have an account? Login <a href="/Login/Index">here</a></div>*@
+    <div style="height: 50px"></div>
+
+</div>
