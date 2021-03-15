@@ -9,7 +9,7 @@ using webBuy.Repositories;
 
 namespace webBuy.Controllers.Seller
 {
-    public class ProductController : Controller
+    public class ProductController : AuthenticationController
     {
         CategoryRepository categoryRepository = new CategoryRepository();
         public ActionResult Index()

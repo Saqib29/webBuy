@@ -116,6 +116,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\LogoutController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\Seller\Authentication\AuthenticationController.cs" />
     <Compile Include="Controllers\Seller\ProductController.cs" />
     <Compile Include="Controllers\Seller\SellerController.cs" />
     <Compile Include="Controllers\Seller\ShopController.cs" />
@@ -226,6 +227,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
     <Folder Include="src\" />
+    <Folder Include="Views\Authentication\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

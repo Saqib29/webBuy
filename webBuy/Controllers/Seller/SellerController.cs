@@ -8,17 +8,15 @@ using webBuy.Repositories;
 
 namespace webBuy.Controllers.Seller
 {
-    public class SellerController : Controller
+    public class SellerController : AuthenticationController
     {
         UserRepository userRepository = new UserRepository();
         ShopRepository shopRepository = new ShopRepository();
         public ActionResult Index()
         {
+            
             Session["shopProfile"] = shopRepository.GetShop((Session["userProfile"] as User).email.ToString());
-            //var t = Session["shopProfile"];
             return View();
-            //var t = shopRepository.GetShop((Session["userProfile"] as User).email.ToString());
-            //return Content("");
         }
         [HttpGet]
         public ActionResult profileUpdate()

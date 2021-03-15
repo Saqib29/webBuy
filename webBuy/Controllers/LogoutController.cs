@@ -12,6 +12,7 @@ namespace webBuy.Controllers
         public ActionResult Index()
         {
             Session["userProfile"] = null;
+            Session["shopProfile"] = null;
             return RedirectToAction("Index","Login"); ;
         }
     }
