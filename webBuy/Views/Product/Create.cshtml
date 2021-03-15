@@ -12,8 +12,14 @@
             @TempData["msg"]
         </div>
     }
+    else if (TempData["succ-msg"] != null)
+    {
+        <div class=" container alert-success small p-2" role="alert">
+            @TempData["succ-msg"]
+        </div>
+    }
 
-    <form method="post" class="mt-5" enctype = "multipart/form-data">
+    <form method="post" class="mt-5" enctype="multipart/form-data">
         <h4>Create new Product</h4>
         <br />
         <div class="form-group">
@@ -41,7 +47,7 @@
         <div class="form-group">
             <label for="formFile" class="form-label">Choose Image</label>
             <input class="form-control" name="productPicture" accept="image/*" type="file" id="formFile">
-            
+
             @Html.ValidationMessageFor(m => m.productPicture, "", new { @class = "text-danger" })
         </div>
         <div class="form-group">

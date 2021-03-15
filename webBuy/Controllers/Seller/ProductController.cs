@@ -27,6 +27,7 @@ namespace webBuy.Controllers.Seller
         public ActionResult Create(Product product)
         {
             product.productStatus = 1;
+            product.shopId = (Session["shopProfile"] as Shop).shopId;
             if (ModelState.IsValid)
             {
                 try
@@ -37,7 +38,9 @@ namespace webBuy.Controllers.Seller
                         string path = Path.Combine(Server.MapPath("~/Images/"), filename);
                         product.productPicture.SaveAs(path);
                         product.image = filename;
-                        return Content("Successfully done");
+
+                        TempData["succ-msg"] =  " Prosuct created success fully";
+                        return RedirectToAction("Create");
                     }
                 }
                 catch
