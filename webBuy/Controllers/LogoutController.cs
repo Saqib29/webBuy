@@ -13,6 +13,7 @@ namespace webBuy.Controllers
         {
             Session["userProfile"] = null;
             Session["shopProfile"] = null;
+            Session["products"]    = null;
             return RedirectToAction("Index","Login"); ;
         }
     }

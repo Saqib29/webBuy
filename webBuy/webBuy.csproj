@@ -216,6 +216,7 @@
     <Content Include="Views\Shop\Create.cshtml" />
     <Content Include="Views\Shop\UpdateShop.cshtml" />
     <Content Include="Views\Product\SeeCategories.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -227,7 +228,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
     <Folder Include="src\" />
-    <Folder Include="Views\Authentication\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -1,0 +1,52 @@
+﻿@using webBuy.Models
+@{
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_sellerLayout.cshtml";
+}
+
+@if (TempData["update-msg"] != null)
+{
+    <div class="alert alert-success small" role="alert">
+        @TempData["update-msg"]
+    </div>
+}
+else if (TempData["msg"] != null)
+{
+    <div class="alert alert-danger small" role="alert">
+        @TempData["msg"]
+    </div>
+}
+else
+{
+    <br />
+}
+
+
+<div class="container">
+    <h3>@((Session["shopProfile"] as Shop).name) Products</h3>
+    <div class="row">
+
+        <!-- Cards -->
+        @foreach (var item in (Session["products"] as List<Product>))
+        {
+            <div class="col-sm m-2">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="../../Images/@item.image" width="500" height="200" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.name</h5>
+                        <p class="card-text">Price: <strong>@item.unitPrice</strong></p>
+                        <p class="card-text">Availability: <strong>@item.quantity</strong></p>
+                        <p class="card-text">Cretaed at: <strong>@item.date</strong></p>
+                        <p class="card-text">Category: <strong>@item.categoryId</strong></p>
+
+                        <a href="#" class="btn btn-primary">Edit or delete</a>
+                    </div>
+                </div>
+            </div>
+        }
+
+
+    </div>
+</div>
+
+
