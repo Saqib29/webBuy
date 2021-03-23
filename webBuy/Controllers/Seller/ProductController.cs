@@ -14,6 +14,11 @@ namespace webBuy.Controllers.Seller
         CategoryRepository categoryRepository = new CategoryRepository();
         ProductRepository productRepository = new ProductRepository();
 
+        public List<Category> categories()
+        {
+            return categoryRepository.GetAll();
+        }
+
         public ActionResult Index()
         {
             Session["products"] = productRepository.GetProducts((Session["shopProfile"] as Shop).shopId);
@@ -60,7 +65,11 @@ namespace webBuy.Controllers.Seller
                 }
                 return Content("It's Ok");
             }
-            ViewBag.categories = categoryRepository.GetAll();
+            if(Session["categories"] == null)
+            {
+                Session["categories"] = categories();
+            }
+            ViewBag.categories = Session["categories"];
             ViewBag.shopId = (Session["shopProfile"] as Shop).shopId;
             return View();
         }
@@ -74,7 +83,22 @@ namespace webBuy.Controllers.Seller
                 TempData["msg"] = "No categories";
                 return View();
             }
+            Session["categories"] = ViewBag.categories;
             return View();
         }
+        [HttpGet]
+        public ActionResult ProductView(int id)
+        {
+            var product = productRepository.Get(id);
+
+            if (Session["categories"] == null)
+            {
+                Session["categories"] = categories();
+            }
+            ViewBag.category = (Session["categories"] as List<Category>).Select(e => e.categoryId == product.categoryId).ToString();
+            ViewBag.product = product;
+            return View();
+        }
+
     }
 }
