@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_sellerLayout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>@ViewBag.Shop.name</h1>
+            <h4>@ViewBag.Shop.email</h4>
+            <br />
+            <h5>Shop Comission: TK @ViewBag.Shop.setComission</h5>
+            <h5>Total Products: @ViewBag.totalProducts</h5>
+        </div>
+        <div class="col">
+            <br /><br /><br />
+            <h4>Balance: Tk @ViewBag.Shop.balance</h4> 
+            <a href="/Others/withdraw/" class="btn btn-secondary">Withdraw</a>
+        </div>
+    </div>
+</div>

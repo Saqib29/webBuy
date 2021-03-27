@@ -117,6 +117,7 @@
     <Compile Include="Controllers\LogoutController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\Seller\Authentication\AuthenticationController.cs" />
+    <Compile Include="Controllers\Seller\OthersController.cs" />
     <Compile Include="Controllers\Seller\ProductController.cs" />
     <Compile Include="Controllers\Seller\SellerController.cs" />
     <Compile Include="Controllers\Seller\ShopController.cs" />
@@ -218,6 +219,8 @@
     <Content Include="Views\Product\SeeCategories.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Product\ProductView.cshtml" />
+    <Content Include="Views\Others\Index.cshtml" />
+    <Content Include="Views\Others\withdraw.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
