@@ -152,5 +152,11 @@ namespace webBuy.Controllers.Seller
 
         }
 
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            productRepository.Delete(id);
+            return RedirectToAction("Index", "Product");
+        }
     }
 }
