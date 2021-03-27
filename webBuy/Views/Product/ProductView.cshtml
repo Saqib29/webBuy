@@ -1,8 +1,118 @@
-﻿
+﻿@model webBuy.Models.Product
+
 @{
     ViewBag.Title = "ProductView";
     Layout = "~/Views/Shared/_sellerLayout.cshtml";
 }
 
-<h2>ProductView</h2>
+@if (TempData["msg"] != null)
+{
+    <div class="alert alert-success small" role="alert">
+        @TempData["msg"]
+    </div>
+}
+else if(TempData["wmsg"] != null)
+{
+    <div class="alert alert-danger small" role="alert">
+        @TempData["wmsg"]
+    </div>
+}
 
+<div class="container">
+    <h3>@ViewBag.product.name</h3>
+
+    <div class="text-center">
+        <img src="../../Images/@ViewBag.product.image" width="200" height="300" class="img-fluid" alt="Responsive image">
+
+    </div>
+    <form method="post" class="mt-5" enctype="multipart/form-data">
+        <h4>Product details</h4>
+        <br />
+        <div class="form-group">
+            <label for="exampleInputProductName">Product Name</label>
+            <input type="text" name="name" class="form-control" id="exampleInputProductName" value="@ViewBag.product.name">
+            @Html.ValidationMessageFor(m => m.name, "", new { @class = "text-danger" })
+        </div>
+        @*<input type="hidden" name="shopId" value="@ViewBag.shopId" />*@
+        <div class="form-group">
+            <label for="exampleInputUnitPrice">Unit Price</label>
+            <input type="text" name="unitPrice" class="form-control" id="exampleInputUnitPrice" value="@ViewBag.product.unitPrice">
+            @Html.ValidationMessageFor(m => m.unitPrice, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            <label for="exampleInputQuantity">Product Quantity</label>
+            <input type="text" name="quantity" class="form-control" id="exampleInputQuantity" value="@ViewBag.product.quantity">
+            @Html.ValidationMessageFor(m => m.quantity, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            <label for="exampleInputDate">Date</label>
+            <input type="text" name="date" class="form-control" id="exampleInputDate" value="@(DateTime.Today.ToString("M/d/yyyy"))" readonly>
+            @Html.ValidationMessageFor(m => m.date, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            <label for="formFile" class="form-label">Choose Image</label>
+            <input class="form-control" name="productPicture" accept="image/*" type="file" id="formFile">
+
+
+            @Html.ValidationMessageFor(m => m.productPicture, "", new { @class = "text-danger" })
+
+        </div>
+        <div hidden>
+            <input type="text" name="image" value="@ViewBag.product.image" />
+            <input type="number" name="productId" value="@ViewBag.product.productId" />
+        </div>
+        <div class="form-group">
+            <label for="exampleInputcategory">Category</label>
+            <select class="form-control" name="categoryId" id="exampleInputcategory">
+                @foreach (var item in ViewBag.categories)
+                {
+                    if (@ViewBag.product.categoryId == item.categoryId)
+                    {
+                        <option value="@item.categoryId" selected>@item.name</option>
+                        continue;
+                    }
+                    <option value="@item.categoryId">@item.name</option>
+                }
+            </select>
+            @Html.ValidationMessageFor(m => m.categoryId, "", new { @class = "text-danger" })
+        </div>
+
+        <a href="/Seller/Index" class="btn btn-primary">Cancel</a>
+        <button type="submit" class="btn btn-primary">Save</button>&nbsp&nbsp  or &nbsp&nbsp
+        @*<a href="#" class="btn btn-danger">Delete</a>*@
+
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+            Delete
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Are you sure to delete?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        If you confirm product will be deleted permanantly.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        @*<button type="button" class="btn btn-primary">Save changes</button>*@
+                        <a href="#" class="btn btn-danger">Confirm</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+
+
+
+</div>

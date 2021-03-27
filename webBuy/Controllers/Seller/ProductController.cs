@@ -13,6 +13,7 @@ namespace webBuy.Controllers.Seller
     {
         CategoryRepository categoryRepository = new CategoryRepository();
         ProductRepository productRepository = new ProductRepository();
+        private HttpPostedFileBase window;
 
         public List<Category> categories()
         {
@@ -95,9 +96,60 @@ namespace webBuy.Controllers.Seller
             {
                 Session["categories"] = categories();
             }
-            ViewBag.category = (Session["categories"] as List<Category>).Select(e => e.categoryId == product.categoryId).ToString();
+            ViewBag.categories = Session["categories"];
+
+            
             ViewBag.product = product;
             return View();
+        }
+        [HttpPost]
+        public ActionResult ProductView(Product product)
+        {
+            product.productStatus = 1;
+            product.shopId = (Session["shopProfile"] as Shop).shopId;
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    if (product.productPicture.ContentLength > 0)
+                    {
+                        
+                        string path = Path.Combine(Server.MapPath("~/Images/"), product.image);
+                        product.productPicture.SaveAs(path);
+
+
+                        productRepository.Update(product);
+                        TempData["msg"] = "Product updated";
+                        return RedirectToAction("ProductView");
+                    }
+                }
+                catch
+                {
+                    product = productRepository.Get(product.productId);
+
+                    if (Session["categories"] == null)
+                    {
+                        Session["categories"] = categories();
+                    }
+                    ViewBag.categories = Session["categories"];
+                    ViewBag.product = product;
+                    return View();
+                }
+
+                
+            }
+
+            var the_product = productRepository.Get(product.productId);
+
+            if (Session["categories"] == null)
+            {
+                Session["categories"] = categories();
+            }
+            ViewBag.categories = Session["categories"];
+            ViewBag.product = the_product;
+            return View();
+
         }
 
     }
