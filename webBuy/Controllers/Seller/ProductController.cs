@@ -158,5 +158,11 @@ namespace webBuy.Controllers.Seller
             productRepository.Delete(id);
             return RedirectToAction("Index", "Product");
         }
+
+        [HttpGet]
+        public ActionResult Sold()
+        {
+            return View();
+        }
     }
 }

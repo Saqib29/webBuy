@@ -191,6 +191,8 @@
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\ProductRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\ReviewRepository.cs" />
+    <Compile Include="Repositories\ShopDiscountRepository.cs" />
     <Compile Include="Repositories\ShopRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Repositories\withdrawRepository.cs" />
@@ -223,6 +225,9 @@
     <Content Include="Views\Product\ProductView.cshtml" />
     <Content Include="Views\Others\Index.cshtml" />
     <Content Include="Views\Others\withdraw.cshtml" />
+    <Content Include="Views\Product\Sold.cshtml" />
+    <Content Include="Views\Others\reviews.cshtml" />
+    <Content Include="Views\Others\discountMSG.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

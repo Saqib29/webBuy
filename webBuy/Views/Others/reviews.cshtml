@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "reviews";
+    Layout = "~/Views/Shared/_sellerLayout.cshtml";
+}
+
+<h2>Reviews</h2>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Review Id</th>
+            <th scope="col">Review</th>
+            <th scope="col">Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var review in ViewBag.reviews)
+        {
+            <tr>
+                <th scope="row">@review.reviewId</th>
+                <td>@review.review1</td>
+                <td>
+                    <strong>
+                        @String.Concat(Enumerable.Repeat("*", @review.rating)) 
+
+                    </strong>
+                </td>
+            </tr>
+        }
+
+        @*<tr>
+            <th scope="row">2</th>
+            <td>Panasonic TV</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Sharp Fridge</td>
+            <td>1</td>
+        </tr>*@
+    </tbody>
+</table>

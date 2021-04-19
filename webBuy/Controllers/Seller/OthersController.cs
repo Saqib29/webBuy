@@ -81,13 +81,36 @@ namespace webBuy.Controllers.Seller
         [HttpGet]
         public ActionResult reviews()
         {
-            return Content("See reviews");
+            ReviewRepository reviewRepository = new ReviewRepository();
+
+            var reviews = reviewRepository.GetAll();
+
+            ViewBag.reviews = reviews;
+            return View();
         }
 
         [HttpGet]
         public ActionResult discountMSG()
         {
-            return Content("Disciunt message");
+            return View();
+        }
+        [HttpPost]
+        public ActionResult discountMSG(ShopDiscount shopDiscount)
+        {
+
+            shopDiscount.shopId = (Session["shopProfile"] as Shop).shopId;
+
+            if(shopDiscount.percentage > 50)
+            {
+                TempData["wrong_parcent"] = "parcentage can't be over 50%";
+                return RedirectToAction("discountMSG");
+            }
+
+            ShopDiscountRepository shopDiscountRepository = new ShopDiscountRepository();
+            shopDiscountRepository.Insert(shopDiscount);
+
+            TempData["discount_msg"] = "Successfully updated message";
+            return RedirectToAction("discountMSG");
         }
     }
 }

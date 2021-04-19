@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "discountMSG";
+    Layout = "~/Views/Shared/_sellerLayout.cshtml";
+}
+
+<h2>Discount Message</h2>
+
+@if (TempData["wrong_parcent"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["wrong_parcent"]
+    </div>
+}
+
+@if (TempData["discount_msg"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["discount_msg"]
+    </div>
+}
+
+<form method="post">
+    <div class="form-group">
+        <label for="exampleInputPromocode">Promocode</label>
+        <input name="promocode" type="text" class="form-control" id="exampleInputPromocode" aria-describedby="PromocodeHelp" placeholder="Enter Promocode">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputParcentage">Parcentage</label>
+        <input name="percentage" type="number" class="form-control" id="exampleInputParcentage" placeholder="Enter Parcentage">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
