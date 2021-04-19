@@ -74,8 +74,20 @@ namespace webBuy.Controllers.Seller
             //insert withdraw history
             withdrawRepository.Insert(withdraw);
 
-            TempData["withdraw"] = comission.amount + " Tk withdraw successfull";
+            TempData["withdraw"] = (withdraw.amount-comission.amount) + " Tk withdrawal successful with " + comission.amount + " TK comission" ;
             return RedirectToAction("withdraw");
+        }
+
+        [HttpGet]
+        public ActionResult reviews()
+        {
+            return Content("See reviews");
+        }
+
+        [HttpGet]
+        public ActionResult discountMSG()
+        {
+            return Content("Disciunt message");
         }
     }
 }
